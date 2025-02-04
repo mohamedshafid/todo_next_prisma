@@ -5,7 +5,7 @@ import cross from "@/public/cross.png";
 import unavailable from "@/public/unavailable.png";
 
 import Image from "next/image";
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface IFormInput {
   task: string;
@@ -19,10 +19,12 @@ const Main = () => {
 
   const onSubmit: SubmitHandler<IFormInput> = async (data) => {
     const result = await addTodo(data.task);
-    setTodos((prevTodos) => [...prevTodos, { ...result, id: result.id.toString() }]); 
+    setTodos((prevTodos) => [
+      ...prevTodos,
+      { ...result, id: result.id.toString() },
+    ]);
     reset();
   };
-
 
   useEffect(() => {
     const fetchTodos = async () => {
@@ -36,15 +38,17 @@ const Main = () => {
     await deleteTodo(id);
     const newTodos = todos.filter((todo) => todo.id !== id);
     setTodos(newTodos);
-  }
+  };
 
   const handleUpdate = async (id: string, completed: boolean) => {
     console.log("inside the handleUpdate");
-    const result=await updateTodo(id,completed);
+    const result = await updateTodo(id, completed);
     console.log(result);
-    const newTodos=todos.map((todo)=>todo.id===id?{...todo,completed:completed}:todo);
+    const newTodos = todos.map((todo) =>
+      todo.id === id ? { ...todo, completed: completed } : todo
+    );
     setTodos(newTodos);
-  }
+  };
 
   return (
     <main className="w-full min-h-screen flex justify-center items-center">
@@ -71,7 +75,6 @@ const Main = () => {
         <hr className="mt-10 h-[.5px] bg-black rounded-full" />
 
         <div>
-
           <ul>
             {todos.length > 0 ? (
               todos.map((todo) => {
@@ -100,7 +103,13 @@ const Main = () => {
               })
             ) : (
               <div className="flex flex-col items-center gap-3 mt-10">
-                <Image src={unavailable} alt="unavailable" className="w-28 h-28 object-fit" />
+                <Image
+                  src="https://s3.ap-south-1.amazonaws.com/mohamed.bucket/todo_prisma/unavailable.png"
+                  alt="unavailable"
+                  className="w-28 h-28 object-fit"
+                  width={1000}
+                  height={1000}
+                />
                 <h1 className="text-3xl font-bold">No Todos Available</h1>
                 <h2 className="text-xl font-light">Create One</h2>
               </div>
