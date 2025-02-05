@@ -1,4 +1,4 @@
-![image]("https://github.com/mohamedshafid/todo_next_prisma/blob/main/public/github_banner.png")
+![image](https://github.com/mohamedshafid/todo_next_prisma/blob/main/public/github_banner.png)
 # 📝 Next.js To-Do List App with Prisma ORM
 
 
