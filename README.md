@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+![image]("https://github.com/mohamedshafid/todo_next_prisma/blob/main/public/github_banner.png")
+# 📝 Next.js To-Do List App with Prisma ORM
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+A simple To-Do List application built using **Next.js** and **Prisma ORM**, featuring CRUD operations:  
+✅ Add tasks  
+✏️ Update tasks  
+🗑 Delete tasks  
+
+## 🚀 Features
+- Next.js for the frontend and API routes
+- Prisma ORM for database interaction
+- PostgreSQL as the database
+- React Hook Form for form handling
+- Axios for API requests
+
+## 🛠 Tech Stack
+- **Frontend:** Next.js, React, Tailwind CSS
+- **Backend:** Next.js API Routes
+- **Database:** PostgreSQL with Prisma ORM
+- **Authentication:** NextAuth.js (optional)
+
+---
+
+## 📂 Project Setup
+
+### 1️⃣ Clone the Repository
+```sh
+git clone https://github.com/mohamedshafid/todo_next_prisma.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2️⃣ Install Dependencies
+```sh
+npm install
+```
+### 3️⃣ Setup Prisma
+```sh
+npx prisma migrate dev --name init
+npx prisma generate
+```
+### 4️⃣ Run the Development Server
+```sh
+Run the development server:
+npm run dev
+```
+## 🛠 Possible Enhancements
+- ###### Add user authentication with NextAuth.js
+- ###### Implement a due date and priority system
+- ###### Add drag-and-drop task reordering
+### 💖 Contributing
+###### Contributions are welcome! Feel free to submit an issue or a pull request.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
